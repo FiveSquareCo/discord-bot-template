@@ -1,0 +1,35 @@
+{
+  "moderation": {
+    "withrole": {
+      "working": true
+    },
+    "purge": {
+      "working": true
+    },
+    "mute": {
+      "working": true
+    },
+    "warn": {
+      "working": true
+    },
+    "kick": {
+      "working": true
+    },
+    "ban": {
+      "working": true
+    }
+  },
+  "utility": {
+    "avatar": {
+      "working": true
+    },
+    "membercount": {
+      "working": true
+    }
+  },
+  "misc": {
+    "afk": {
+      "working": "comming soon"
+    }
+  }
+}

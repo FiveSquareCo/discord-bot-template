@@ -1,0 +1,26 @@
+{
+  "name": "Testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Parthasarath1",
+  "license": "ISC",
+  "dependencies": {
+    "canvacord": "^5.0.8",
+    "canvas": "^2.6.1",
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0",
+    "module-alias": "^2.2.2",
+    "mongoose": "^5.10.13",
+    "wokcommands": "^1.0.1"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@config": "./configs",
+    "@schema": "./models"
+  }
+}

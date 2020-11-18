@@ -1,0 +1,15 @@
+{
+  "badwords": {
+    "working": true,
+    "ignoredChannelsId": [],
+    "ignoredMemberId": []
+  },
+  "links": {
+    "working": true,
+    "ignoredChannelsId": [],
+    "ignoredMemberId": []
+  },
+  "spam": {
+    "working": "comming soon"
+  }
+}

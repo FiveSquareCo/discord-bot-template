@@ -1,0 +1,19 @@
+{
+  "welcome": {
+    "working": true,
+    "welcomeChannelId": "",
+    "message": ""
+  },
+  "leave": {
+    "working": false
+  },
+  "reactions": {
+    "working": "comming soon"
+  },
+  "modMail": {
+    "working": true
+  },
+  "leveling": {
+    "working": true
+  }
+}
