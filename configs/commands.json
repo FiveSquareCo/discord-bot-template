@@ -29,7 +29,7 @@
   },
   "misc": {
     "afk": {
-      "working": "comming soon"
+      "working": true
     }
   }
 }
