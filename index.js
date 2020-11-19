@@ -10,7 +10,10 @@ const client = new Discord.Client({
 });
 
 client.on("ready", () => {
-  client.user.setActivity("discord.js", { type: "WATCHING" });
+  client.user.setActivity(config.botActivity.presence, {
+    type: config.botActivity.activity,
+  });
+  client.user.setStatus(config.botActivity.status);
   console.log(`${client.user.username} is ready!`);
   new wokCommands(client, "commands", "features")
     .setMongoPath(process.env.MONGO_URI)

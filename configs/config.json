@@ -2,6 +2,11 @@
   "name:": "",
   "prefix": "+",
   "embedColor": "#00ffff",
+  "botActivity": {
+    "presence": "Five Square Co.",
+    "activity": "WATCHING",
+    "status": "online"
+  },
   "moderation": {
     "mobileFriendly": false,
     "modlogsChannelId": "777842118894288916"
