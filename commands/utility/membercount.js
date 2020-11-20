@@ -29,17 +29,17 @@ module.exports = {
       .setTitle(`Server Stats of ${message.guild.name}`)
       .setColor(config.embedColor)
       .setDescription(
-        `<:member:777112588999720960>  **Total Members(Humans): **${totalMembers}
+        `**->**  **Total Members(Humans): **${totalMembers}
 
-        <:bot:777112588634816533>**Bots: ** ${bots}
+       **->** **Bots: ** ${bots}
 
-      <:online:777110081476493312> **Members Online: ** ${onlineMembers}
+      **->** **Members Online: ** ${onlineMembers}
 
-      <:offline:777110075743535115> **Members Offline: ** ${offlineMembers}
+       **->** **Members Offline: ** ${offlineMembers}
 
-      <:idle:777110080930971668> **Idle Members: ** ${idleMembers}
+      **->** **Idle Members: ** ${idleMembers}
 
-      <:dnd:777110081480294420> **Dnd Members:** ${dndMembers}`
+      **->** **Dnd Members:** ${dndMembers}`
       )
       .setTimestamp()
       .setFooter(`Server Stats As of`);

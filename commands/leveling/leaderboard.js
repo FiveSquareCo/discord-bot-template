@@ -3,8 +3,7 @@ const { MessageEmbed } = require("discord.js");
 const config = require("@config/config.json");
 module.exports = {
   name: "leaderboard",
-  commands: ["leaderboard"],
-  aliases: ["lb", "top"],
+  commands: ["leaderboard", "lb", "top"],
   description: "leaderboard",
   callback: async (message) => {
     let desc = "";
@@ -21,12 +20,15 @@ module.exports = {
       .limit(10);
     for (let counter = 0; counter < results.length; ++counter) {
       const { userId, level, xp } = results[counter];
-      desc += `${
-        counter + 1
-      } <@${userId}> is ${level} and with ${xp} xp \n\n\n`;
+      let { user } = message.guild.members.cache.get(userId);
+      // console.log(user.username);
+      desc += `**#${counter + 1} ${user.username}#${user.discriminator} **
+      **- Level:** ${level} , **Xp:** ${xp}  
+      \n`;
     }
     // console.log(desc);
     const lbEmbed = new MessageEmbed()
+      .setTitle(`**Leadeboard of *${message.guild.name}* !**`)
       .setColor(config.embedColor)
       .setFooter(`Leaderboard As of`)
       .setTimestamp()

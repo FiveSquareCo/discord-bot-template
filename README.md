@@ -19,9 +19,12 @@
 
 # Prerequisites
 
+Its Good to have prior knowledge of JavaScript, discord.js library and discord, if you dont have any
+knowledege about all the three thinks mentioned abouve this project is not for you, this is a template for all those who want to design their own server or they desing servers for others.
+
 # About
 
-This is a Fully Coustamizable
+This is a Fully Coustamizable discord.js bot Template made by [Five Square Co.](https://github.com/FiveSquareCo)
 
 ## What is This?
 
