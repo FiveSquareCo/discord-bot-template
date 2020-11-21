@@ -19,8 +19,7 @@
 
 # Prerequisites
 
-Its Good to have prior knowledge of JavaScript, discord.js library and discord, if you dont have any
-knowledege about all the three thinks mentioned abouve this project is not for you, this is a template for all those who want to design their own server or they desing servers for others.
+It's good to have a prior knowledge of JavaScript , Discord.js library and Discord. If you don't have any idea of the three links mentioned above then this project is not meant for you, this is a template for all those who wants to design their personal server or they designing the server for others.
 
 # About
 

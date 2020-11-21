@@ -1,6 +1,10 @@
 {
   "name:": "",
   "prefix": "+",
+  "owner": {
+    "discordId": "",
+    "name": ""
+  },
   "embedColor": "#00ffff",
   "botActivity": {
     "presence": "Five Square Co.",

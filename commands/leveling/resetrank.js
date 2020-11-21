@@ -5,6 +5,7 @@ module.exports = {
   name: "resetrank",
   commands: ["resetrank", "rankreset", "rr"],
   description: "reset ranks",
+  requiredPermissions: ["ADMINISTRATOR"],
   callback: async (message, args, text, client) => {
     let outputMessageId;
     const { guild, channel, author } = message;

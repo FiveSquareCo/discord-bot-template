@@ -71,6 +71,10 @@ module.exports = {
               name: `Reason`,
               value: reason,
               inline: true,
+            },
+            {
+              name: `User Id`,
+              value: `${member.id}`,
             }
           )
           .setTimestamp()
@@ -114,6 +118,10 @@ module.exports = {
             name: `Reason`,
             value: reason,
             inline: true,
+          },
+          {
+            name: `User Id`,
+            value: `${member.id}`,
           }
         )
         .setTimestamp();
