@@ -31,5 +31,19 @@
     "afk": {
       "working": true
     }
+  },
+  "info": {
+    "roleinfo": {
+      "working": true
+    },
+    "userinfo": {
+      "working": true
+    },
+    "serverinfo": {
+      "working": true
+    },
+    "weather": {
+      "working": true
+    }
   }
 }

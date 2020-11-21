@@ -16,6 +16,7 @@
     "dotenv": "^8.2.0",
     "module-alias": "^2.2.2",
     "mongoose": "^5.10.13",
+    "weather-js": "^2.0.0",
     "wokcommands": "^1.0.1"
   },
   "_moduleAliases": {
