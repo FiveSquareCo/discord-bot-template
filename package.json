@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "npm install",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "Parthasarath1",
@@ -23,5 +25,8 @@
     "@root": ".",
     "@config": "./configs",
     "@schema": "./models"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }

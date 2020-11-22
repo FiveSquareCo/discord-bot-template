@@ -8,8 +8,7 @@
   "embedColor": "#00ffff",
   "botActivity": {
     "presence": "Five Square Co.",
-    "activity": "WATCHING",
-    "status": "online"
+    "activity": "WATCHING"
   },
   "moderation": {
     "mobileFriendly": false,
