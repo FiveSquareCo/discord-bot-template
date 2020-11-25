@@ -9,6 +9,12 @@
     "ignoredChannelsId": [],
     "ignoredMemberId": []
   },
+  "massMention": {
+    "working": true,
+    "ignoredChannelsId": [],
+    "ignoredMemberId": [],
+    "noOfInvalidMentions": 3
+  },
   "spam": {
     "working": "comming soon"
   }

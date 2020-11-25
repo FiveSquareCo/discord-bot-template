@@ -12,6 +12,7 @@
   },
   "moderation": {
     "mobileFriendly": false,
+    "multipleLogs": "coming soon",
     "modlogsChannelId": "777842118894288916"
   }
 }
