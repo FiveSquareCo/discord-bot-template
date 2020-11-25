@@ -1,5 +1,5 @@
 {
-  "name": "Testing",
+  "name": "fivesquareco._discord_template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,11 +10,11 @@
   },
   "keywords": [],
   "author": "Parthasarath1",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "canvacord": "^5.0.8",
     "canvas": "^2.6.1",
-    "discord.js": "^12.4.1",
+    "discord.js": "^12.5.0",
     "dotenv": "^8.2.0",
     "module-alias": "^2.2.2",
     "mongoose": "^5.10.13",
