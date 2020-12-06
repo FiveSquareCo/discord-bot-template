@@ -24,7 +24,8 @@
   "_moduleAliases": {
     "@root": ".",
     "@config": "./configs",
-    "@schema": "./models"
+    "@schema": "./models",
+    "@features": "./features"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

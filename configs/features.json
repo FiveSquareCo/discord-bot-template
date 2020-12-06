@@ -15,5 +15,9 @@
   },
   "leveling": {
     "working": true
+  },
+  "suggestions": {
+    "working": true,
+    "suggestionsChannelId": ""
   }
 }

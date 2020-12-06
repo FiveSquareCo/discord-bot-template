@@ -3,6 +3,9 @@ const { badwords: curse } = require("@config/automod.json");
 module.exports = async (client) => {
   client.on("message", (message) => {
     //author bot
+    const msgContent = message.content.toLowerCase();
+    const splitMessage = msgContent.split(" ");
+    // console.log(splitMessage);
     if (message.author.bot) return;
     //checking for working
     if (curse.working) {
@@ -24,7 +27,7 @@ module.exports = async (client) => {
       let wordUsed;
       let badwordUse = false;
       for (i = 0; i < badwords.length; i++) {
-        if (message.content.toLowerCase().includes(badwords[i].toLowerCase())) {
+        if (splitMessage.includes(badwords[i].toLowerCase())) {
           badwordUse = true;
           if (badwordUse) {
             wordUsed = badwords[i];
