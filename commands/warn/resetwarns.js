@@ -7,8 +7,10 @@ module.exports = {
   description: "reset warnings of user",
   minArgs: 1,
   maxArgs: 1,
+  category: "warn",
+  cooldown: "3s",
   requiredPermissions: ["ADMINISTRATOR"],
-  syntaxError: "Incorrect syntax! Use `{PREFIX}resetwarns <@ user-id>`",
+  expectedArgs: "<@ user-id>",
   callback: async (message, args, text, client) => {
     if (args[0] === "all") {
       let outputMessageId;

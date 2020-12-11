@@ -3,6 +3,7 @@ const config = require("@config/config.json");
 const { info } = require("@config/commands.json");
 module.exports = {
   name: "serverinfo",
+  category: "info",
   commands: ["serverinfo", "si", "infoserver", "gi"],
   description: "information about server",
   callback: async (message) => {

@@ -6,10 +6,11 @@ module.exports = {
   commands: ["kick"],
   description: "kick a User",
   requiredPermissions: ["KICK_MEMBERS"],
+  category: "moderation",
+  cooldown: "5s",
   maxArgs: -1,
   minArgs: 1,
-  syntaxError:
-    "Incorrect syntax! Use `{PREFIX}kick <@ user-id> <reason(optional)>`",
+  expectedArgs: "<@ user-id> <reason(optional)>",
   callback: (message, args) => {
     const serverId = message.guild.id;
     const channelId = message.channel.id;

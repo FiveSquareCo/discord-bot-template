@@ -6,8 +6,9 @@ module.exports = {
   name: "weather",
   commands: ["weather", "climate"],
   minargs: 1,
+  category: "info",
   description: "current weather of a city.",
-  syntaxError: "incorrect Syntax! use `{PREFIX}weather <city-name>`",
+  expectedArgs: "<city-name>",
   callback: async (message, args) => {
     if (info.weather.working) {
       let city = args.join(" ");

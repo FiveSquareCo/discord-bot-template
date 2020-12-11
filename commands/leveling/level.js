@@ -4,8 +4,8 @@ const canvacord = require("canvacord");
 const { join } = require("path");
 module.exports = {
   name: "level",
-  commands: ["level"],
-  aliases: ["l", "lvl"],
+  commands: ["level", "myrank", "rank", "lvl"],
+  category: "leveling",
   description: "Level of a User",
   callback: async (message) => {
     const guildId = message.guild.id;

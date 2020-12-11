@@ -6,8 +6,8 @@ module.exports = {
   commands: ["roleinfo", "ri", "inforole", "ir", "roleinformation"],
   minArgs: 1,
   maxArgs: 1,
-  syntaxError:
-    "Incorrect Usage! Use `{PREFIX}roleinfo <role-id or mention role>`",
+  category: "info",
+  expectedArgs: "<role-id or mention role>",
   description: "information about role",
   callback: (message, args) => {
     if (info.roleinfo.working) {

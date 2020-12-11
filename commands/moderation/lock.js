@@ -6,6 +6,8 @@ module.exports = {
   name: "lock",
   commands: ["lock"],
   description: "Locks Channel",
+  category: "moderation",
+  cooldown: "5s",
   callback: async (message, args) => {
     const serverId = message.guild.id;
     const channelId = message.channel.id;

@@ -6,8 +6,9 @@ module.exports = {
   aliases: ["del"],
   description: "Bulk delete messages",
   requiredPermissions: ["MANAGE_MESSAGES"],
+  category: "moderation",
+  cooldown: "5s",
   maxArgs: 2,
-  syntaxError: "Incorrect Usage! use `{PREFIX}purge` for more info.",
   callback: async (message, args) => {
     const noOfMessages = parseInt(args[0]);
     const prefix = config.prefix;

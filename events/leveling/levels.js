@@ -74,3 +74,7 @@ const addXp = async (guildId, userId, xpToAdd, message) => {
 };
 
 module.exports.addXp = addXp;
+module.exports.config = {
+  displayName: "levels",
+  dbName: "levels",
+};

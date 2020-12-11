@@ -8,8 +8,10 @@ module.exports = {
   description: "list all members with role",
   requiredPermissions: ["MANAGE_ROLES" || "ADMINISTRATOR "],
   maxArgs: 1,
+  category: "moderation",
+  cooldown: "5s",
   minArgs: 1,
-  syntaxError: "Incorrect Usage! use `{PREFIX}withrole <role-id>`",
+  expectedArgs: "{PREFIX}withrole <role-id>",
   callback: (message, args) => {
     const serverId = message.guild.id;
     const channelId = message.channel.id;

@@ -5,6 +5,7 @@ const config = require("@config/config.json");
 
 module.exports = {
   name: "removeafk",
+  category: "afk",
   commads: ["removeafk", "remafk"],
   description: "set a user AFK",
   callback: async (message, args) => {

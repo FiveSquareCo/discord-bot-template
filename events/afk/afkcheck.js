@@ -44,3 +44,7 @@ module.exports = (client) => {
     });
   });
 };
+module.exports.config = {
+  displayName: "afk",
+  dbName: "afks",
+};

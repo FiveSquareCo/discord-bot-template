@@ -42,3 +42,7 @@ module.exports = async (client) => {
     }
   });
 };
+module.exports.config = {
+  displayName: "links",
+  dbName: "automod",
+};

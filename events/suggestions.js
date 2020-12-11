@@ -60,3 +60,7 @@ module.exports = (client) => {
 module.exports.messageStatus = messageStatus;
 
 module.exports.sc = sc;
+module.exports.config = {
+  displayName: "suggestions",
+  dbName: "suggestions",
+};

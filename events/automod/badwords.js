@@ -46,3 +46,7 @@ module.exports = async (client) => {
     }
   });
 };
+module.exports.config = {
+  displayName: "badwords",
+  dbName: "automod",
+};

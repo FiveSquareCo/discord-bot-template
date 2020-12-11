@@ -3,6 +3,7 @@ const config = require("@config/config.json");
 const { info } = require("@config/commands.json");
 module.exports = {
   name: "userinfo",
+  category: "info",
   commands: ["userinfo", "ui", "infouser"],
   description: "information about user",
   callback: async (message) => {

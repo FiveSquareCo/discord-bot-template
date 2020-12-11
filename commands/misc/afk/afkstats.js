@@ -5,6 +5,7 @@ const config = require("@config/config.json");
 
 module.exports = {
   name: "afkstats",
+  category: "afk",
   commads: ["afkstats", "amiafk", "meafk", "statsafk"],
   description: "AFK stats",
   callback: async (message, args) => {

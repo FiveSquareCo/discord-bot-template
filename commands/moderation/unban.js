@@ -8,7 +8,9 @@ module.exports = {
   minArgs: 2,
   maxArgs: -1,
   description: "unban a banned user",
-  syntaxError: "Incorrect syntax! Use `{PREFIX}unban <user-id> <reason>`",
+  expectedArgs: "{PREFIX}unban <user-id> <reason>",
+  category: "moderation",
+  cooldown: "5s",
   callback: async (message, args) => {
     const serverId = message.guild.id;
     const channelId = message.channel.id;

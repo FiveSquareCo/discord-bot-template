@@ -7,8 +7,9 @@ module.exports = {
   aliases: ["um"],
   description: "unMuting a User",
   minArgs: 1,
-  syntaxError:
-    "Incorrect syntax! Use `{PREFIX}mute [<@ user-id> or <user-tag>]`",
+  category: "moderation",
+  cooldown: "5s",
+  expectedArgs: "{PREFIX}mute [<@ user-id> or <user-tag>]",
   callback: async (message, args) => {
     const { guild } = message;
     let id = "";

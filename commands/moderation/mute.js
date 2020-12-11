@@ -14,9 +14,11 @@ module.exports = {
   description: "Muting a User",
   minArgs: 2,
   maxArgs: 2,
+  category: "moderation",
+  cooldown: "5s",
   requiredPermissions: ["ADMINISTRATOR"],
-  syntaxError:
-    "Incorrect syntax! Use `{PREFIX}mute <@ user-id> <reason- SPAMMING/BADWORD/ADVERTISING>`",
+  expectedArgs:
+    "{PREFIX}mute <@ user-id> <reason- SPAMMING/BADWORD/ADVERTISING>",
   callback: async (message, args) => {
     const staff = message.author;
     const target = message.mentions.users.first();

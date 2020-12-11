@@ -7,6 +7,7 @@ module.exports = {
   aliases: ["av", "dp", "pfp"],
   description: "Desplay avatar of user",
   maxArgs: 1,
+  category: "utility",
   callback: (message) => {
     if (message.channel.type === "dm") return;
     const user = message.mentions.users.first() || message.author;

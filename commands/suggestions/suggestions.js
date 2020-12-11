@@ -7,9 +7,9 @@ module.exports = {
   description: "accept or deny suggestion",
   requiredPermissions: ["ADMINISTRATOR"],
   maxArgs: -1,
+  category: "suggestions",
   minArgs: 2,
-  syntaxError:
-    "Incorrect syntax! Use `{PREFIX}suggestion <suggestion message ID> <status - Accepted/Denied> <reason>`",
+  expectedArgs: "<suggestion message ID> <status - Accepted/Denied> <reason>",
   callback: async (message, args) => {
     const { author, guild } = message;
     const messageId = args.shift();

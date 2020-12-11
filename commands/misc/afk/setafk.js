@@ -6,10 +6,11 @@ const config = require("@config/config.json");
 module.exports = {
   name: "setafk",
   commads: ["setafk", "afkset"],
+  category: "afk",
   description: "set a user AFK",
   maxArgs: -1,
   minArgs: 1,
-  syntaxError: "Incorrect Syntax! Use `{PREFIX}setafk <reason>`",
+  expectedArgs: "<reason>",
   callback: async (message, args) => {
     if (misc.afk.working) {
       const { author, guild } = message;

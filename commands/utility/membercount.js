@@ -6,6 +6,7 @@ module.exports = {
   commads: ["membercount"],
   aliases: ["mc", "mcount", "stats"],
   description: "no of members",
+  category: "utility",
   callback: (message, args) => {
     const totalMembers = message.guild.members.cache.filter(
       (member) => !member.user.bot

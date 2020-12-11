@@ -28,3 +28,7 @@ module.exports = (client) => {
     }
   });
 };
+module.exports.config = {
+  displayName: "massmention",
+  dbName: "automod",
+};

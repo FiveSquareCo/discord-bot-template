@@ -12,3 +12,7 @@ module.exports = (client) => {
     }
   });
 };
+module.exports.config = {
+  displayName: "modMail",
+  dbName: "modMail",
+};

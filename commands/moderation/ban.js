@@ -5,11 +5,12 @@ module.exports = {
   name: "ban",
   commands: ["ban"],
   description: "ban a User",
+  category: "moderation",
+  cooldown: "5s",
   minArgs: 3,
   maxArgs: -1,
   requiredPermissions: ["ADMINISTRATOR" || "BAN_MEMBERS"],
-  syntaxError:
-    "Incorrect syntax! Use `{PREFIX}ban <@ user-id> <time in days> <reason>`",
+  expectedArgs: "<@ user-id> <time in days> <reason>",
   callback: (message, args) => {
     const serverId = message.guild.id;
     const channelId = message.channel.id;

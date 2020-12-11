@@ -15,12 +15,9 @@ client.on("ready", () => {
   });
   // client.user.setStatus(config.botActivity.status);
   console.log(`${client.user.username} is ready!`);
-  new wokCommands(client, "commands", "features")
+  new wokCommands(client, "commands", "events", "messages.json")
     .setMongoPath(process.env.MONGO_URI)
-    .setDefaultPrefix(config.prefix)
-    .setSyntaxError(
-      "Incorrect syntax! Please use {PREFIX}{COMMAND} {ARGUMENTS}"
-    );
+    .setDefaultPrefix(config.prefix);
 });
 
 client.login(process.env.TOKEN);

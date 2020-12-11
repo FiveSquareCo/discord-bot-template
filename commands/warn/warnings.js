@@ -8,7 +8,9 @@ module.exports = {
   commands: ["warnings", "listwarn", "lw"],
   description: "list all Warnings of a User",
   minArgs: 1,
-  syntaxError: "Incorrect syntax! Use `{PREFIX}warnings <@ user-id>`",
+  category: "warn",
+  cooldown: "3s",
+  expectedArgs: "<@ user-id>",
   callback: async (message, args) => {
     const { author } = message;
     if (moderation.warn.working) {
@@ -16,7 +18,7 @@ module.exports = {
       const channelId = message.channel.id;
       let logChannelId;
       let logChannel;
-      if (config.moderation.modlogsChannelId) {
+      if (config.moderation.modlogsChannelId !== "") {
         logChannelId = config.moderation.modlogsChannelId;
         logChannel = message.guild.channels.cache.get(logChannelId);
       }
@@ -48,8 +50,9 @@ module.exports = {
         let reply = `**${noOfWarns} Warns for ${target.tag}**\n\n`;
         for (const warning of results.warnings) {
           //   console.log(results.warnings.length);
-          const { givenById, givenByName, timestamp, reason } = warning;
-          reply += `${warnNum}) **On  :**  ${new Date(
+          const { givenById, givenByName, timestamp, reason, id } = warning;
+          reply += `${warnNum}) **ID  :**  ${id} 
+          **On  :**  ${new Date(
             timestamp
           ).toDateString()} | **Warned By  :**  ${givenByName} 
        **Reason  :**  '${reason}'\n\n`;
@@ -96,8 +99,9 @@ module.exports = {
       let reply = `**${noOfWarns} Warns for <@${userId}>**\n\n`;
       for (const warning of results.warnings) {
         //   console.log(results.warnings.length);
-        const { givenById, givenByName, timestamp, reason } = warning;
-        reply += `${warnNum}) **On  :**  ${new Date(
+        const { givenById, givenByName, timestamp, reason, id } = warning;
+        reply += `${warnNum}) **ID  :**  ${id}
+        **On  :**  ${new Date(
           timestamp
         ).toDateString()} | **Warned By  :** <@${givenById}> 
        **Reason  :**  '${reason}'\n\n`;

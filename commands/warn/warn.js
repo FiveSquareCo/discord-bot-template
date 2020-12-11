@@ -2,14 +2,17 @@ const warnSchema = require("@schema/warnSchema");
 const config = require("@config/config");
 const { moderation } = require("@config/commands");
 const { MessageEmbed } = require("discord.js");
+const warnId = require("randomstring");
 module.exports = {
   name: "warn",
   commands: ["warn"],
   aliases: ["w"],
   description: "Warn a User",
   minArgs: 2,
+  category: "warn",
+  cooldown: "3s",
   requiredPermissions: ["MANAGE_GUILD"],
-  syntaxError: "Incorrect syntax! Use `{PREFIX}warn <@ user-id> <reason>`",
+  expectedArgs: "I <@ user-id> <reason>",
   callback: async (message, args) => {
     if (moderation.warn.working) {
       const serverId = message.guild.id;
@@ -38,6 +41,7 @@ module.exports = {
       const reason = args.join(" ");
       // console.log(guildId, userId, reason);
       const warning = {
+        id: warnId.generate(),
         givenById: message.author.id,
         givenByName: message.member.user.tag,
         timestamp: new Date().getTime(),

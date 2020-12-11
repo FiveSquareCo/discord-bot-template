@@ -5,6 +5,7 @@ module.exports = {
   name: "leaderboard",
   commands: ["leaderboard", "lb", "top"],
   description: "leaderboard",
+  category: "leveling",
   callback: async (message) => {
     let desc = "";
 

@@ -5,6 +5,8 @@ const { moderation } = require("@config/commands.json");
 module.exports = {
   name: "unlock",
   commands: ["unlock"],
+  category: "moderation",
+  cooldown: "5s",
   description: "unlocks Channel",
   callback: (message, args) => {
     const { guild, channel, author } = message;
