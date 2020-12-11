@@ -3,9 +3,9 @@
 <br />
 <img src="https://discord.js.org/static/logo.svg" width="546" alt="discord.js" />
 <br />
-<img  src="https://img.shields.io/github/stars/FiveSquareCo/discord-bot-template?style=social">
-<img src="https://img.shields.io/github/forks/FiveSquareCo/discord-bot-template?label=uses%2Fcontrubutions&style=social">
-<img src="https://img.shields.io/github/license/FiveSquareCo/discord-bot-template?style=social">
+<img  src="https://img.shields.io/github/stars/FiveSquareCo/discord-bot-template?style=for-the-badge">
+<img src="https://img.shields.io/github/forks/FiveSquareCo/discord-bot-template?label=uses%2Fcontrubutions&style=for-the-badge">
+<img src="https://img.shields.io/github/license/FiveSquareCo/discord-bot-template?style=for-the-badge">
 </div>
 
 # Table of contents
@@ -60,6 +60,24 @@ There is no actual answer for this question! We the Team of [Five Square Co.](ht
 # Add Your Own
 
 # Hosting
+
+You can host this bot any where as your wish if you dont know how to host, We recommend you watching these videos -
+
+##### Free Limited
+
+All the options below wont't provide 24/7 free hosting you need to pay at some point of time to continue hosting, if you can pay these are best solutions.
+
+**Heroku** - [Click here to watch](https://youtu.be/OFearuMjI4s) <br />
+**Digital Ocean** - [Click here to watch](https://youtu.be/lskn1Xr-q8E) <br />
+**AWS** - [Click here to watch](https://youtu.be/bAnmI4mwGcs) <br/>
+
+#### Free
+
+All the options below provide 24/7 hosting but these to have some cons, if you have some money to host you can choose one of these [Options](#free-limited)
+|
+**Repl.it** - [Click here to know more](https://repl.it/talk/learn/Hosting-discordjs-bots-on-replit-Works-for-both-discordjs-and-Eris/11027)
+
+**Glitch** - [Click here to watch](https://www.youtube.com/watch?v=uv0hcWw7jdA)
 
 # Contributing
 
