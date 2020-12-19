@@ -53,7 +53,8 @@ module.exports = (client) => {
         }
       });
     } else {
-      console.log("no");
+      // console.log("no");
+      return;
     }
   }
 };

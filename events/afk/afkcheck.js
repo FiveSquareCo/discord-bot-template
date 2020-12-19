@@ -4,9 +4,13 @@ const config = require("@config/config.json");
 
 module.exports = (client) => {
   client.on("message", async (message) => {
+    if (message.author.bot) return;
     const { author, guild, mentions } = message;
-    if (message.content.startsWith("+setafk" || "+removeAfk" || "+afkstats"))
+    if (message.content.startsWith("+afkstats")) {
+      console.log("yes");
       return;
+    }
+
     const userID = author.id;
     const guildID = guild.id;
     await afkSchema.findOneAndRemove(
@@ -48,3 +52,5 @@ module.exports.config = {
   displayName: "afk",
   dbName: "afks",
 };
+
+//

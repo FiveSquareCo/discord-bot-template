@@ -1,8 +1,6 @@
 {
   "welcome": {
-    "working": true,
-    "welcomeChannelId": "",
-    "message": ""
+    "working": "comming soon"
   },
   "leave": {
     "working": false

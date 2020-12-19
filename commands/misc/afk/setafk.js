@@ -31,8 +31,9 @@ module.exports = {
           new: true,
         }
       );
+      // console.log(result);
       if (!result) {
-        message.reply("There wan a error! please try again");
+        message.reply("There was a error! please try again");
         return;
       }
       const setAfkEmbed = new MessageEmbed()
