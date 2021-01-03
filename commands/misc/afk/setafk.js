@@ -17,7 +17,7 @@ module.exports = {
 
       const userId = author.id;
       const guildId = guild.id;
-
+      const member = guild.members.cache.get(userId);
       const reason = args.join(" ");
       // console.log(author.id, guild.id, reason);
       const result = await afkSchema.findOneAndUpdate(
@@ -48,7 +48,27 @@ module.exports = {
         )
         .setFooter(`Set you afk`)
         .setTimestamp();
-      message.channel.send(setAfkEmbed);
+      await message.channel.send(setAfkEmbed);
+      // await console.log(member);
+      const changeNickname = async (member) => {
+        if (!member.nickname) {
+          const name = member.user.username;
+          try {
+            await member.setNickname(`[AFK] ${name}`);
+          } catch (err) {}
+
+          return;
+        }
+        if (member.nickname) {
+          const nickname = member.nickname;
+          try {
+            await member.setNickname(`[AFK] ${nickname}`);
+          } catch (err) {}
+
+          return;
+        }
+      };
+      await changeNickname(member);
     }
   },
 };

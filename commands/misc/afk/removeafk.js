@@ -14,9 +14,16 @@ module.exports = {
 
       const userId = author.id;
       const guildId = guild.id;
+      const member = guild.members.cache.get(userId);
+      const changeNickname = async (member) => {
+        if (member.nickname.startsWith("[AFK]")) {
+          const name = member.nickname.replace("[AFK] ", "");
+          member.setNickname(name);
+        }
+      };
       const result = await afkSchema.findOneAndRemove(
         { userId, guildId },
-        (error, result) => {
+        async (error, result) => {
           if (error)
             return message.reply(`There was an error please try again!`);
           if (result) {
@@ -28,10 +35,12 @@ module.exports = {
               .setFooter(`Removed you afk`).setDescription(`
         ${author.username} , I removed you from Afk list!
         `);
-            message.channel.send(removeAfkEmbed);
+            await message.channel.send(removeAfkEmbed);
+            await changeNickname(member);
+            return;
           }
           if (!result) {
-            message.reply(
+            return message.reply(
               `You were not AFK! use "${config.prefix}setafk" to set you afk.`
             );
           }

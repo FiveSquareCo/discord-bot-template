@@ -7,15 +7,26 @@ module.exports = (client) => {
     if (message.author.bot) return;
     const { author, guild, mentions } = message;
     if (message.content.startsWith("+afkstats")) {
-      console.log("yes");
+      // console.log("yes");
       return;
     }
+    // if (message.content.startsWith("+setafk")) {
+    //   // console.log("yes");
+    //   return;
+    // }
 
     const userID = author.id;
     const guildID = guild.id;
+    const member = guild.members.cache.get(userID);
+    const changeNickname = async (member) => {
+      if (member.nickname.startsWith("[AFK]")) {
+        const name = member.nickname.replace("[AFK] ", "");
+        member.setNickname(name);
+      }
+    };
     await afkSchema.findOneAndRemove(
       { userId: userID, guildId: guildID },
-      (error, res) => {
+      async (error, res) => {
         if (error) return;
         if (res) {
           const removeAfkEmbed = new MessageEmbed()
@@ -26,7 +37,8 @@ module.exports = (client) => {
         ${author.username} , I removed you from Afk list!\n
         **Reason:** You replied to a message, without remobing AFK tag.
         `);
-          message.channel.send(removeAfkEmbed);
+          await message.channel.send(removeAfkEmbed);
+          await changeNickname(member);
           return;
         }
       }
