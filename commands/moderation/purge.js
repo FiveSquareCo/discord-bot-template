@@ -9,7 +9,7 @@ module.exports = {
   category: "moderation",
   cooldown: "5s",
   maxArgs: 2,
-  callback: async (message, args) => {
+  callback: async ({ message, args }) => {
     const noOfMessages = parseInt(args[0]);
     const prefix = config.prefix;
     if (!args[0]) {

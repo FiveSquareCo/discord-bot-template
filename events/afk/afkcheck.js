@@ -22,7 +22,7 @@ module.exports = (client) => {
       if (member.nickname.startsWith("[AFK]")) {
         const name = member.nickname.replace("[AFK] ", "");
         member.setNickname(name);
-      }
+      } else return;
     };
     await afkSchema.findOneAndRemove(
       { userId: userID, guildId: guildID },

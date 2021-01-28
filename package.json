@@ -19,7 +19,7 @@
     "mongoose": "^5.10.13",
     "randomstring": "^1.1.5",
     "weather-js": "^2.0.0",
-    "wokcommands": "^1.0.1"
+    "wokcommands": "^1.2.1"
   },
   "_moduleAliases": {
     "@root": ".",

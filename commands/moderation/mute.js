@@ -19,7 +19,7 @@ module.exports = {
   requiredPermissions: ["ADMINISTRATOR"],
   expectedArgs:
     "{PREFIX}mute <@ user-id> <reason- SPAMMING/BADWORD/ADVERTISING>",
-  callback: async (message, args) => {
+  callback: async ({ message, args }) => {
     const staff = message.author;
     const target = message.mentions.users.first();
     if (!target) {

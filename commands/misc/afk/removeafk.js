@@ -8,7 +8,7 @@ module.exports = {
   category: "afk",
   commads: ["removeafk", "remafk"],
   description: "set a user AFK",
-  callback: async (message, args) => {
+  callback: async ({ message, args }) => {
     if (misc.afk.working) {
       const { author, guild } = message;
 

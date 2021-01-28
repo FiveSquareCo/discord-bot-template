@@ -8,7 +8,7 @@ module.exports = {
   category: "moderation",
   cooldown: "5s",
   description: "unlocks Channel",
-  callback: (message, args) => {
+  callback: ({ message, args }) => {
     const { guild, channel, author } = message;
     if (moderation.lock.working) {
       //   console.log(message.guild.defaultRole);

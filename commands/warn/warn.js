@@ -13,7 +13,7 @@ module.exports = {
   cooldown: "3s",
   requiredPermissions: ["MANAGE_GUILD"],
   expectedArgs: "I <@ user-id> <reason>",
-  callback: async (message, args) => {
+  callback: async ({ message, args }) => {
     if (moderation.warn.working) {
       const serverId = message.guild.id;
       const channelId = message.channel.id;

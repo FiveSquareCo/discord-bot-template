@@ -10,7 +10,7 @@ module.exports = {
   category: "suggestions",
   minArgs: 2,
   expectedArgs: "<suggestion message ID> <status - Accepted/Denied> <reason>",
-  callback: async (message, args) => {
+  callback: async ({ message, args }) => {
     const { author, guild } = message;
     const messageId = args.shift();
     const status = args.shift().toUpperCase();

@@ -8,7 +8,7 @@ module.exports = {
   description: "Desplay avatar of user",
   maxArgs: 1,
   category: "utility",
-  callback: (message) => {
+  callback: ({ message }) => {
     if (message.channel.type === "dm") return;
     const user = message.mentions.users.first() || message.author;
     const username = user.username;

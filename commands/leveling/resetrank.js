@@ -7,7 +7,7 @@ module.exports = {
   description: "reset ranks",
   category: "leveling",
   requiredPermissions: ["ADMINISTRATOR"],
-  callback: async (message, args, text, client) => {
+  callback: async ({ message, args, text, client }) => {
     let outputMessageId;
     const { guild, channel, author } = message;
     message.delete();

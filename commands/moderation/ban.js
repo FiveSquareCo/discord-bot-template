@@ -11,7 +11,7 @@ module.exports = {
   maxArgs: -1,
   requiredPermissions: ["ADMINISTRATOR" || "BAN_MEMBERS"],
   expectedArgs: "<@ user-id> <time in days> <reason>",
-  callback: (message, args) => {
+  callback: ({ message, args }) => {
     const serverId = message.guild.id;
     const channelId = message.channel.id;
     let logChannelId;

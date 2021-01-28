@@ -8,7 +8,7 @@ module.exports = {
   description: "Locks Channel",
   category: "moderation",
   cooldown: "5s",
-  callback: async (message, args) => {
+  callback: async ({ message, args }) => {
     const serverId = message.guild.id;
     const channelId = message.channel.id;
     let logChannelId;

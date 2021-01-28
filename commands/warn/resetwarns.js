@@ -11,7 +11,7 @@ module.exports = {
   cooldown: "3s",
   requiredPermissions: ["ADMINISTRATOR"],
   expectedArgs: "<@ user-id>",
-  callback: async (message, args, text, client) => {
+  callback: async ({ message, args, text, client }) => {
     if (args[0] === "all") {
       let outputMessageId;
       const { guild, channel, author } = message;

@@ -11,7 +11,7 @@ module.exports = {
   category: "warn",
   cooldown: "3s",
   expectedArgs: "<@ user-id>",
-  callback: async (message, args) => {
+  callback: async ({ message, args }) => {
     const { author } = message;
     if (moderation.warn.working) {
       const serverId = message.guild.id;

@@ -12,7 +12,7 @@ module.exports = {
   cooldown: "5s",
   minArgs: 1,
   expectedArgs: "{PREFIX}withrole <role-id>",
-  callback: (message, args) => {
+  callback: ({ message, args }) => {
     const serverId = message.guild.id;
     const channelId = message.channel.id;
     let logChannelId;

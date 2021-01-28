@@ -11,7 +11,7 @@ module.exports = {
   maxArgs: -1,
   minArgs: 1,
   expectedArgs: "<@ user-id> <reason(optional)>",
-  callback: (message, args) => {
+  callback: ({ message, args }) => {
     const serverId = message.guild.id;
     const channelId = message.channel.id;
     let logChannelId;

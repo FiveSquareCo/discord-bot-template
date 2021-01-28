@@ -11,7 +11,7 @@ module.exports = {
   maxArgs: -1,
   minArgs: 1,
   expectedArgs: "<reason>",
-  callback: async (message, args) => {
+  callback: async ({ message, args }) => {
     if (misc.afk.working) {
       const { author, guild } = message;
 

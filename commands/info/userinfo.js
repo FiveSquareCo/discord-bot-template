@@ -6,7 +6,7 @@ module.exports = {
   category: "info",
   commands: ["userinfo", "ui", "infouser"],
   description: "information about user",
-  callback: async (message) => {
+  callback: async ({ message }) => {
     const { author, guild } = message;
     // console.log(author.presence.activities);
     if (info.userinfo.working) {

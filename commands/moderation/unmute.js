@@ -10,7 +10,7 @@ module.exports = {
   category: "moderation",
   cooldown: "5s",
   expectedArgs: "{PREFIX}mute [<@ user-id> or <user-tag>]",
-  callback: async (message, args) => {
+  callback: async ({ message, args }) => {
     const { guild } = message;
     let id = "";
     const target = message.mentions.users.first();

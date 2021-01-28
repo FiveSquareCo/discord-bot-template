@@ -7,7 +7,7 @@ module.exports = {
   commands: ["level", "myrank", "rank", "lvl"],
   category: "leveling",
   description: "Level of a User",
-  callback: async (message) => {
+  callback: async ({ message }) => {
     const guildId = message.guild.id;
     const userId = message.member.id;
     const image = join(__dirname, "..", "..", "images", "welcomeBG.png");

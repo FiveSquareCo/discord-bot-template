@@ -8,7 +8,7 @@ module.exports = {
   category: "afk",
   commads: ["afkstats", "amiafk", "meafk", "statsafk"],
   description: "AFK stats",
-  callback: async (message, args) => {
+  callback: async ({ message, args }) => {
     if (misc.afk.working) {
       const { author, guild } = message;
 

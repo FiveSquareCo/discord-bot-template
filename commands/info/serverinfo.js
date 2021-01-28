@@ -6,7 +6,7 @@ module.exports = {
   category: "info",
   commands: ["serverinfo", "si", "infoserver", "gi"],
   description: "information about server",
-  callback: async (message) => {
+  callback: async ({ message }) => {
     if (info.serverinfo.working) {
       const capitalize = (s) => {
         return s.charAt(0).toUpperCase() + s.slice(1);

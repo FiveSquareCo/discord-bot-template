@@ -6,7 +6,7 @@ module.exports = {
   commands: ["leaderboard", "lb", "top"],
   description: "leaderboard",
   category: "leveling",
-  callback: async (message) => {
+  callback: async ({ message }) => {
     let desc = "";
 
     const guildId = message.guild.id;

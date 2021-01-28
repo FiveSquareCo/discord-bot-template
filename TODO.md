@@ -1,3 +1,3 @@
-- [] Dockerize for Easier development
+- [] YT Notification system
 
 More Coming Soon....

@@ -9,7 +9,7 @@ module.exports = {
   category: "info",
   description: "current weather of a city.",
   expectedArgs: "<city-name>",
-  callback: async (message, args) => {
+  callback: async ({ message, args }) => {
     if (info.weather.working) {
       let city = args.join(" ");
       let degreetype = "C"; // You can change it to F. (fahrenheit.)
