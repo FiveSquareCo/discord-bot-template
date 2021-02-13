@@ -1,6 +1,6 @@
-const levelSchema = require("@schema/levelSchema");
-const { badwords } = require("@config/badwords.json");
-const { leveling } = require("@config/features.json");
+const levelSchema = require("./../../models/levelSchema");
+const { badwords } = require("./../../configs/badwords.json");
+const { leveling } = require("./../../configs/features.json");
 
 module.exports = (client) => {
   client.on("message", async (message) => {

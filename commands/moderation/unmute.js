@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const muteSchema = require("@schema/muteSchema");
+const muteSchema = require("../../models/muteSchema");
 
 module.exports = {
   name: "unmute",

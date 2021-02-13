@@ -1,5 +1,4 @@
 require("dotenv").config();
-require("module-alias/register");
 
 const Discord = require("discord.js");
 const config = require("./configs/config.json");

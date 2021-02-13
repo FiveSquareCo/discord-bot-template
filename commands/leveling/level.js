@@ -1,4 +1,4 @@
-const levelSchema = require("@schema/levelSchema");
+const levelSchema = require("../../models/levelSchema");
 const Discord = require("discord.js");
 const canvacord = require("canvacord");
 const { join } = require("path");

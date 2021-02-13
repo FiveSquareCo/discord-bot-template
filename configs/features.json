@@ -17,5 +17,10 @@
   "suggestions": {
     "working": true,
     "suggestionsChannelId": "795201339788755034"
+  },
+  "yt-notifications": {
+    "working": true,
+    "notificationChannelID": "",
+    "channels": {}
   }
 }

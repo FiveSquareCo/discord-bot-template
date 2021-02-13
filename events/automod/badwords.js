@@ -1,5 +1,5 @@
-const { badwords } = require("@config/badwords.json");
-const { badwords: curse } = require("@config/automod.json");
+const { badwords } = require("./../../configs/badwords.json");
+const { badwords: curse } = require("./../../configs/automod.json");
 module.exports = async (client) => {
   client.on("message", (message) => {
     //author bot

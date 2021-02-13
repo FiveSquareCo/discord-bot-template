@@ -1,6 +1,6 @@
-const afkSchema = require("@schema/afkSchema");
+const afkSchema = require("./../../models/afkSchema");
 const { MessageEmbed } = require("discord.js");
-const config = require("@config/config.json");
+const config = require("./../../configs/config.json");
 
 module.exports = (client) => {
   client.on("message", async (message) => {

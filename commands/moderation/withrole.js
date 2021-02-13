@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
-const { moderation } = require("@config/commands.json");
-const config = require("@config/config.json");
+const { moderation } = require("../../configs/commands.json");
+const config = require("../../configs/config.json");
 
 module.exports = {
   name: "withrole",

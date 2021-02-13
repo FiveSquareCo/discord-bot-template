@@ -1,4 +1,4 @@
-const { suggestions } = require("@config/features.json");
+const { suggestions } = require("./../configs/features.json");
 const { MessageEmbed } = require("discord.js");
 
 const messageStatus = {

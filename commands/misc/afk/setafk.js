@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
-const afkSchema = require("@schema/afkSchema");
-const { misc } = require("@config/commands.json");
-const config = require("@config/config.json");
+const afkSchema = require("../../../models/afkSchema");
+const { misc } = require("../../../configs/commands.json");
+const config = require("../../../configs/config.json");
 
 module.exports = {
   name: "setafk",

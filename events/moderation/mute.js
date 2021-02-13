@@ -1,5 +1,5 @@
-const muteSchema = require("@schema/muteSchema");
-const levelSchema = require("@schema/levelSchema");
+const muteSchema = require("./../../models/muteSchema");
+const levelSchema = require("./../../models/levelSchema");
 
 module.exports = (client) => {
   const checkLevel = async () => {

@@ -1,6 +1,6 @@
-const warnSchema = require("@schema/warnSchema");
-const config = require("@config/config");
-const { moderation } = require("@config/commands");
+const warnSchema = require("./../../models/warnSchema");
+const config = require("./../../configs/config.json");
+const { moderation } = require("./../../configs/commands");
 const { MessageEmbed } = require("discord.js");
 const warnId = require("randomstring");
 module.exports = {

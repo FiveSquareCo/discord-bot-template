@@ -11,21 +11,15 @@
   "author": "Parthasarath1",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.1",
     "canvacord": "^5.0.8",
     "canvas": "^2.6.1",
     "discord.js": "^12.5.0",
     "dotenv": "^8.2.0",
-    "module-alias": "^2.2.2",
     "mongoose": "^5.10.13",
     "randomstring": "^1.1.5",
     "weather-js": "^2.0.0",
     "wokcommands": "^1.2.1"
-  },
-  "_moduleAliases": {
-    "@root": ".",
-    "@config": "./configs",
-    "@schema": "./models",
-    "@features": "./events"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

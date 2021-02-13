@@ -1,5 +1,5 @@
-const { moderation } = require("@config/commands.json");
-const config = require("@config/config.json");
+const { moderation } = require("../../configs/commands.json");
+const config = require("../../configs/config.json");
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "kick",

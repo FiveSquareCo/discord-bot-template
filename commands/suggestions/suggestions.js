@@ -1,5 +1,5 @@
-const { messageStatus } = require("@features/suggestions");
-const { suggestions } = require("@config/features.json");
+const { messageStatus } = require("../../events/suggestions");
+const { suggestions } = require("../../configs/features.json");
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "suggestions",

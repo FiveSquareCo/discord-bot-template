@@ -1,7 +1,7 @@
 const weather = require("weather-js");
 const { MessageEmbed } = require("discord.js");
-const config = require("@config/config.json");
-const { info } = require("@config/commands.json");
+const config = require("../../configs/config.json");
+const { info } = require("../../configs/commands.json");
 module.exports = {
   name: "weather",
   commands: ["weather", "climate"],

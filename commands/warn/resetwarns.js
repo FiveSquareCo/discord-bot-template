@@ -1,5 +1,5 @@
-const warnSchema = require("@schema/warnSchema");
-const config = require("@config/config.json");
+const warnSchema = require("./../../models/warnSchema");
+const config = require("./../../configs/config.json");
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "resetwarns",
