@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const { massMention } = require("@config/automod.json");
+const { massMention } = require("../../configs/automod.json");
 module.exports = (client) => {
   client.on("message", async (message) => {
     if (message.author.bot) return;

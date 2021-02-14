@@ -1,5 +1,5 @@
-const { links } = require("@config/links.json");
-const { links: link } = require("@config/automod.json");
+const { links } = require("../../configs/links.json");
+const { links: link } = require("../../configs/automod.json");
 module.exports = async (client) => {
   client.on("message", (message) => {
     // console.log(message);

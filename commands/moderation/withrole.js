@@ -11,7 +11,6 @@ module.exports = {
   category: "moderation",
   cooldown: "5s",
   minArgs: 1,
-  expectedArgs: "{PREFIX}withrole <role-id>",
   callback: ({ message, args }) => {
     const serverId = message.guild.id;
     const channelId = message.channel.id;
@@ -27,7 +26,7 @@ module.exports = {
       const role = message.guild.roles.cache.get(args[0]);
       if (!role) {
         message.reply(
-          `thare is no role with the id, please give a valid role id`
+          `there is no role with the id, please give a valid role id`
         );
         return;
       }
@@ -84,6 +83,7 @@ module.exports = {
       const members = message.guild.roles.cache
         .get(roleId)
         .members.map((m) => m.user.id);
+      console.log(members);
       const limitedMembers = members.slice(0, 30);
 
       joinMembers = limitedMembers.join(">\n<@");

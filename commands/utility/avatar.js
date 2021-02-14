@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const config = require("@config/config");
+const config = require("../../configs/config");
 
 module.exports = {
   name: "avatar",

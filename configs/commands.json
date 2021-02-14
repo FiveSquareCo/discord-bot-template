@@ -51,6 +51,9 @@
     },
     "weather": {
       "working": true
+    },
+    "roleinfo": {
+      "working": true
     }
   }
 }
