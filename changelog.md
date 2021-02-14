@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 Stable release with 25 commands and 11 features
 
-## **[1.0.] - 28<sup>th</sup>January,2021**
+## **[1.0.0] - 28<sup>th</sup>January,2021**
 
 1. updated to wokcommands 1.2.1
 2. some bug fixes

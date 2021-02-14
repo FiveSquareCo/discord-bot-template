@@ -9,6 +9,11 @@ module.exports = (client) => {
   }
   client.on("messageUpdate", async (oldM, newM) => {
     if (message_logs.working) {
+      let channelId;
+      if (message_logs.channel_ID === "channel_id_here") return;
+      if (message_logs.channel_ID != "channel_id_here") {
+        channelId = message_logs.channel_ID;
+      }
       if (oldM.content === newM.content) return;
       const messageLinkEp = `https://discordapp.com/channels/${oldM.guild.id}/${oldM.channel.id}/${oldM.id}`;
       const messageUpdateog = new MessageEmbed()
@@ -41,28 +46,35 @@ module.exports = (client) => {
     }
   });
   client.on("messageDelete", async (message) => {
-    const messageUpdateog = new MessageEmbed()
-      .setColor(embedColor)
-      .setAuthor("Message Delete Log")
-      .setTimestamp()
-      .setDescription(
-        `
+    if (message_logs.working) {
+      let channelId;
+      if (message_logs.channel_ID === "channel_id_here") return;
+      if (message_logs.channel_ID != "channel_id_here") {
+        channelId = message_logs.channel_ID;
+      }
+      const messageUpdateog = new MessageEmbed()
+        .setColor(embedColor)
+        .setAuthor("Message Delete Log")
+        .setTimestamp()
+        .setDescription(
+          `
    **Message Content  : ** ${message.content}`
-      )
-      .addFields(
-        {
-          name: "Member:",
-          value: `<@${message.author.id}>`,
-          inline: true,
-        },
-        {
-          name: "Channel Used:",
-          value: `<#${message.channel.id}>`,
-          inline: true,
-        }
-      );
-    const channel = message.guild.channels.cache.get(channelId);
-    channel.send(messageUpdateog);
+        )
+        .addFields(
+          {
+            name: "Member:",
+            value: `<@${message.author.id}>`,
+            inline: true,
+          },
+          {
+            name: "Channel Used:",
+            value: `<#${message.channel.id}>`,
+            inline: true,
+          }
+        );
+      const channel = message.guild.channels.cache.get(channelId);
+      channel.send(messageUpdateog);
+    }
   });
 };
 
