@@ -1,3 +1,16 @@
 {
-  "levelCommandMessage": "card"
+  "levelCommandMessage": "embed",
+  "levelRewards": {
+    "working": true,
+    "rewards": {
+      "level-1": "",
+      "level-5": "",
+      "level-15": "",
+      "level-25": "",
+      "level-35": "",
+      "level-45": "",
+      "level-55": "",
+      "level-70": ""
+    }
+  }
 }
