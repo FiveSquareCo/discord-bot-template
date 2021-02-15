@@ -1,5 +1,6 @@
 const levelSchema = require("../../models/levelSchema");
 const { MessageEmbed } = require("discord.js");
+const { levelRewards } = require("../../configs/levels.json");
 const config = require("../../configs/config.json");
 module.exports = {
   name: "resetrank",
@@ -63,6 +64,40 @@ module.exports = {
                   outM.delete();
                 });
                 message.reply(`deleted ranks of ${deletedCount} members!`);
+                if (
+                  levelRewards.working &&
+                  levelRewards.rewards["level-1"] != "reward_role_id"
+                ) {
+                  const members = guild.members.cache.forEach((member) => {
+                    const role1 = levelRewards.rewards["level-1"];
+                    const role2 = levelRewards.rewards["level-5"];
+                    const role3 = levelRewards.rewards["level-15"];
+                    const role4 = levelRewards.rewards["level-25"];
+                    const role5 = levelRewards.rewards["level-35"];
+                    const role6 = levelRewards.rewards["level-45"];
+                    const role7 = levelRewards.rewards["level-55"];
+                    const role8 = levelRewards.rewards["level-70"];
+                    if (
+                      role1 &&
+                      role2 &&
+                      role3 &&
+                      role4 &&
+                      role5 &&
+                      role6 &&
+                      role7 &&
+                      role8
+                    ) {
+                      member.roles.remove(role1);
+                      member.roles.remove(role2);
+                      member.roles.remove(role3);
+                      member.roles.remove(role4);
+                      member.roles.remove(role5);
+                      member.roles.remove(role6);
+                      member.roles.remove(role7);
+                      member.roles.remove(role8);
+                    }
+                  });
+                }
                 return;
               } else {
                 channel.messages.fetch(outputMessageId).then((outM) => {

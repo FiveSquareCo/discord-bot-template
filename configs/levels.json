@@ -1,16 +1,27 @@
 {
   "levelCommandMessage": "embed",
+  "levelUpnotification": {
+    "working": true,
+    "channel": {
+      "message_reply": true,
+      "diffrent": {
+        "working": true,
+        "channel_ID": "810506075547500594",
+        "message_type": "embed"
+      }
+    }
+  },
   "levelRewards": {
     "working": true,
     "rewards": {
-      "level-1": "",
-      "level-5": "",
-      "level-15": "",
-      "level-25": "",
-      "level-35": "",
-      "level-45": "",
-      "level-55": "",
-      "level-70": ""
+      "level-1": "810471176371044412",
+      "level-5": "reward_role_id",
+      "level-15": "reward_role_id",
+      "level-25": "reward_role_id",
+      "level-35": "reward_role_id",
+      "level-45": "reward_role_id",
+      "level-55": "reward_role_id",
+      "level-70": "reward_role_id"
     }
   }
 }
