@@ -6,5 +6,9 @@
   "message_logs": {
     "working": true,
     "channel_ID": "channel_id_here"
+  },
+  "nickname_logs": {
+    "working": true,
+    "channel_ID": "channel_id_here"
   }
 }
