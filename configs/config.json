@@ -7,8 +7,19 @@
   },
   "embedColor": "#00ffff",
   "botActivity": {
-    "presence": "Five Square Co.",
-    "activity": "WATCHING"
+    "type": "multiple",
+    "multiple": {
+      "presence": [
+        "Five Square Co.",
+        "Discord Bot Template by Five Square Co."
+      ],
+      "activity": "WATCHING",
+      "time": "5000"
+    },
+    "single": {
+      "presence": "Five Square Co.",
+      "activity": "WATCHING"
+    }
   },
   "moderation": {
     "mobileFriendly": false,

@@ -9,9 +9,21 @@ const client = new Discord.Client({
 });
 
 client.on("ready", () => {
-  client.user.setActivity(config.botActivity.presence, {
-    type: config.botActivity.activity,
-  });
+  if (config.botActivity.type === "multiple") {
+    const randomStaus = () => {
+      let random = config.botActivity.multiple.presence;
+      let rStatus = Math.floor(Math.random() * random.length);
+      client.user.setActivity(random[rStatus], {
+        type: config.botActivity.multiple.activity,
+      });
+    };
+    setInterval(randomStaus, 30000);
+  } else if (config.botActivity.type === "single") {
+    client.user.setActivity(config.botActivity.single.presence, {
+      type: config.botActivity.single.activity,
+    });
+  }
+
   // client.user.setStatus(config.botActivity.status);
   const messagesPath = "./messages.json";
   const dbOptions = {

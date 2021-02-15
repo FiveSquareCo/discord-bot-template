@@ -14,7 +14,7 @@
   "levelRewards": {
     "working": true,
     "rewards": {
-      "level-1": "810471176371044412",
+      "level-1": "reward_role_id",
       "level-5": "reward_role_id",
       "level-15": "reward_role_id",
       "level-25": "reward_role_id",
