@@ -1,13 +1,17 @@
 {
   "automod_logs": {
     "working": true,
-    "channel_ID": "channel_id_here"
+    "channel_ID": "795201366993010698"
   },
   "message_logs": {
     "working": true,
     "channel_ID": "channel_id_here"
   },
   "nickname_logs": {
+    "working": true,
+    "channel_ID": "channel_id_here"
+  },
+  "invite_logs": {
     "working": true,
     "channel_ID": "channel_id_here"
   }

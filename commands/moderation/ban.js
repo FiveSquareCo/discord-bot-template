@@ -16,7 +16,7 @@ module.exports = {
     const channelId = message.channel.id;
     let logChannelId;
     let logChannel;
-    if (config.moderation.modlogsChannelId) {
+    if (config.moderation.modlogsChannelId != "channel_id_here") {
       logChannelId = config.moderation.modlogsChannelId;
       logChannel = message.guild.channels.cache.get(logChannelId);
     }
@@ -42,54 +42,6 @@ module.exports = {
         return;
       }
       member.ban({ days: time, reason: reason });
-      if (config.moderation.mobileFriendly) {
-        const banLogEmbed = new MessageEmbed()
-          .setAuthor(`Ban Log`)
-          .setColor(config.embedColor)
-          .setDescription(`Message Content: ${message.content}`)
-          .addFields(
-            {
-              name: `Used by:`,
-              value: message.author.tag,
-              inline: true,
-            },
-            {
-              name: `Channel used:(channel name)`,
-              value: message.channel.name,
-              inline: true,
-            },
-            {
-              name: `Output:`,
-              value: `Output message Link: [Click Here](https://discordapp.com/channels/${serverId}/${channelId}/${outputMessageId}) `,
-              // inline: true,
-            },
-            {
-              name: `Time`,
-              value: time,
-              inline: true,
-            },
-            {
-              name: `Reason`,
-              value: reason,
-              inline: true,
-            },
-            {
-              name: `User Id`,
-              value: `${member.id}`,
-            }
-          )
-          .setTimestamp()
-          .setFooter(`Mobile Friendly`);
-        message.channel
-          .send(`Banned The User for ${time} days.`)
-          .then((msg) => {
-            // console.log(msg.id);
-
-            outputMessageId = msg.id;
-          })
-          .then(logChannel.send(banLogEmbed));
-        return;
-      }
       const banLogEmbed = new MessageEmbed()
         .setAuthor(`Ban Log`)
         .setColor(config.embedColor)
@@ -129,12 +81,14 @@ module.exports = {
 
       message.channel
         .send(`Banned The User for ${time} days.`)
-        .then((msg) => {
+        .then(async (msg) => {
           // console.log(msg.id);
 
           outputMessageId = msg.id;
-        })
-        .then(logChannel.send(banLogEmbed));
+          if (logChannel) {
+            await logChannel.send(banLogEmbed);
+          }
+        });
       return;
     }
   },

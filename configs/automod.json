@@ -5,7 +5,7 @@
     "ignoredMemberId": []
   },
   "links": {
-    "working": false,
+    "working": true,
     "ignoredChannelsId": [],
     "ignoredMemberId": []
   },
@@ -16,6 +16,12 @@
     "noOfInvalidMentions": 3
   },
   "spam": {
+    "working": true,
+    "ignoredMemberId": [],
+    "ignoredChannelId": [],
+    "mute_role_name": "Muted"
+  },
+  "massEmoji": {
     "working": "comming soon"
   }
 }

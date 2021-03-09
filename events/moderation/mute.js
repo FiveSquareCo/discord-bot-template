@@ -1,33 +1,36 @@
 const muteSchema = require("./../../models/muteSchema");
 const levelSchema = require("./../../models/levelSchema");
+const { leveling } = require("../../configs/features.json");
 
 module.exports = (client) => {
-  const checkLevel = async () => {
-    // console.log("Levels > Checking for levels");
+  if (leveling.working) {
+    const checkLevel = async () => {
+      // console.log("Levels > Checking for levels");
 
-    const results = await levelSchema.find();
-    // console.log(results);
-    if (results && results.length) {
-      for (const result of results) {
-        const { guildId, userId, level } = result;
+      const results = await levelSchema.find();
+      // console.log(results);
+      if (results && results.length) {
+        for (const result of results) {
+          const { guildId, userId, level } = result;
 
-        const guild = client.guilds.cache.get(guildId);
-        const member = (await guild.members.fetch()).get(userId);
-        if (!member) return;
+          const guild = client.guilds.cache.get(guildId);
+          const member = (await guild.members.fetch()).get(userId);
+          if (!member) return;
 
-        const role = guild.roles.cache.find((role) => {
-          return role.name === `level${level}`;
-        });
-        if (!role) {
-          return;
+          const role = guild.roles.cache.find((role) => {
+            return role.name === `level${level}`;
+          });
+          if (!role) {
+            return;
+          }
+          member.roles.add(role);
         }
-        member.roles.add(role);
       }
-    }
 
-    setTimeout(checkLevel, 1000 * 60 * 10);
-  };
-  checkLevel();
+      setTimeout(checkLevel, 1000 * 60 * 10);
+    };
+    checkLevel();
+  }
   const checkMutes = async () => {
     // console.log("Mute > Checking for Mutes");
     const now = new Date();

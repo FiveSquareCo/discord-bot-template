@@ -16,7 +16,7 @@ module.exports = {
     const channelId = message.channel.id;
     let logChannelId;
     let logChannel;
-    if (config.moderation.modlogsChannelId) {
+    if (config.moderation.modlogsChannelId != "channel_id_here") {
       logChannelId = config.moderation.modlogsChannelId;
       logChannel = message.guild.channels.cache.get(logChannelId);
     }
@@ -41,40 +41,6 @@ module.exports = {
       }
       if (!reason) {
         member.kick();
-        if (config.moderation.mobileFriendly) {
-          const noReasonKickLogembed = new MessageEmbed()
-            .setAuthor(`Kick Log (No Reason)`)
-            .setColor(config.embedColor)
-            .setDescription(`Message Content: ${message.content}`)
-            .addFields(
-              {
-                name: `Used by:`,
-                value: message.author.tag,
-                inline: true,
-              },
-              {
-                name: `Channel used:(channel name)`,
-                value: message.channel.name,
-                inline: true,
-              },
-              {
-                name: `Output:`,
-                value: `Output message Link: [Click Here](https://discordapp.com/channels/${serverId}/${channelId}/${outputMessageId}) `,
-                // inline: true,
-              }
-            )
-            .setTimestamp()
-            .setFooter(`Mobile Friendly`);
-          message.channel
-            .send(`Kicked The User`)
-            .then((msg) => {
-              // console.log(msg.id);
-
-              outputMessageId = msg.id;
-            })
-            .then(logChannel.send(noReasonKickLogembed));
-          return;
-        }
         const noReasonKickLogembed = new MessageEmbed()
           .setAuthor(`Kick Log (No Reason)`)
           .setColor(config.embedColor)
@@ -99,53 +65,19 @@ module.exports = {
           .setTimestamp();
         message.channel
           .send(`Kicked The User`)
-          .then((msg) => {
+          .then(async (msg) => {
             // console.log(msg.id);
 
             outputMessageId = msg.id;
+            if (logChannel) {
+              await logChannel.send(noReasonKickLogembed);
+            }
           })
-          .then(logChannel.send(noReasonKickLogembed));
+          .then();
         return;
       }
       member.kick(reason);
-      if (config.moderation.mobileFriendly) {
-        const noReasonKickLogembed = new MessageEmbed()
-          .setAuthor(`Kick Log (Reason)`)
-          .setColor(config.embedColor)
-          .setDescription(`Message Content: ${message.content}`)
-          .addFields(
-            {
-              name: `Used by:`,
-              value: message.author.tag,
-              inline: true,
-            },
-            {
-              name: `Channel used:(channel name)`,
-              value: message.channel.name,
-              inline: true,
-            },
-            {
-              name: `Output:`,
-              value: `Output message Link: [Click Here](https://discordapp.com/channels/${serverId}/${channelId}/${outputMessageId}) `,
-              // inline: true,
-            },
-            {
-              name: `Reason`,
-              value: reason,
-            }
-          )
-          .setTimestamp()
-          .setFooter(`Mobile Friendly`);
-        message.channel
-          .send(`Kicked The User`)
-          .then((msg) => {
-            // console.log(msg.id);
 
-            outputMessageId = msg.id;
-          })
-          .then(logChannel.send(noReasonKickLogembed));
-        return;
-      }
       const noReasonKickLogembed = new MessageEmbed()
         .setAuthor(`Kick Log (Reason)`)
         .setColor(config.embedColor)

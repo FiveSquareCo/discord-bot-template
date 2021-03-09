@@ -32,54 +32,7 @@ module.exports = {
       }
 
       let joinMembers;
-      if (config.moderation.mobileFriendly) {
-        let outputMessageId;
-        // console.log("mobile");
-        const members = message.guild.roles.cache
-          .get(roleId)
-          .members.map((m) => m.user.tag);
-        const limitedMembers = members.slice(0, 30);
 
-        const joinMembers = limitedMembers.join("\n");
-        const withroleEmbed = new MessageEmbed()
-          .setAuthor(`Withrole`)
-          .setColor(config.embedColor)
-          .setTitle(`${members.length} Members with role '${role.name}' `)
-          .setDescription(`${joinMembers}`)
-          .setFooter(`This Will show top 30 members with the role given`);
-        const withroleLogEmbed = new MessageEmbed()
-          .setAuthor(`Withrole Log`)
-          .setColor(config.embedColor)
-          .setDescription(`Message Content: ${message.content}`)
-          .addFields(
-            {
-              name: `Used by:`,
-              value: message.author.tag,
-              inline: true,
-            },
-            {
-              name: `Channel used:(channel name)`,
-              value: message.channel.name,
-              inline: true,
-            },
-            {
-              name: `Output:`,
-              value: `Output message Link: [Click Here](https://discordapp.com/channels/${serverId}/${channelId}/${outputMessageId}) `,
-              // inline: true,
-            }
-          )
-          .setTimestamp()
-          .setFooter(`Mobile Friendly`);
-        message.channel
-          .send(withroleEmbed)
-          .then((msg) => {
-            // console.log(msg.id);
-            outputMessageId = msg.id;
-          })
-          .then(logChannel.send(withroleLogEmbed));
-
-        return;
-      }
       const members = message.guild.roles.cache
         .get(roleId)
         .members.map((m) => m.user.id);
@@ -118,13 +71,11 @@ module.exports = {
         )
         .setTimestamp();
 
-      message.channel
-        .send(withroleEmbed)
-        .then((msg) => {
-          // console.log(msg.id);
-          outputMessageId = msg.id;
-        })
-        .then(logChannel.send(withroleLogEmbed));
+      message.channel.send(withroleEmbed).then((msg) => {
+        // console.log(msg.id);
+        outputMessageId = msg.id;
+      });
+      // .then(logChannel.send(withroleLogEmbed));
     }
   },
 };

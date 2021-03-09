@@ -37,6 +37,12 @@
   "misc": {
     "afk": {
       "working": true
+    },
+    "invites": {
+      "working": true
+    },
+    "ping": {
+      "working": true
     }
   },
   "info": {
@@ -50,9 +56,6 @@
       "working": true
     },
     "weather": {
-      "working": true
-    },
-    "roleinfo": {
       "working": true
     }
   }

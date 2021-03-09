@@ -1,5 +1,5 @@
 {
-  "levelCommandMessage": "embed",
+  "levelCommandMessage": "card",
   "levelUpnotification": {
     "working": true,
     "channel": {
