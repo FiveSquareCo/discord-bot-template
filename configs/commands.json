@@ -43,6 +43,9 @@
     },
     "ping": {
       "working": true
+    },
+    "quote": {
+      "working": true
     }
   },
   "info": {

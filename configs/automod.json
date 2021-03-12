@@ -22,6 +22,9 @@
     "mute_role_name": "Muted"
   },
   "massEmoji": {
-    "working": "comming soon"
+    "working": true,
+    "ignoredChannelsId": [],
+    "ignoredMemberId": [],
+    "noOfInvalidMentions": 3
   }
 }
