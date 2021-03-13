@@ -1,6 +1,7 @@
-const { MessageEmbed } = require("discord.js");
 const { moderation } = require("../../configs/commands.json");
 const config = require("../../configs/config.json");
+const pagenation = require("discord.js-pagination");
+const discord = require("discord.js");
 
 module.exports = {
   name: "withrole",
@@ -11,45 +12,89 @@ module.exports = {
   category: "moderation",
   cooldown: "5s",
   minArgs: 1,
-  callback: ({ message, args }) => {
+  callback: async ({ message, args }) => {
     const serverId = message.guild.id;
     const channelId = message.channel.id;
     let logChannelId;
     let logChannel;
-    if (config.moderation.modlogsChannelId) {
+    if (config.moderation.modlogsChannelId != "channel_id_here") {
       logChannelId = config.moderation.modlogsChannelId;
       logChannel = message.guild.channels.cache.get(logChannelId);
     }
 
     if (moderation.withrole.working) {
-      const roleId = args[0];
-      const role = message.guild.roles.cache.get(args[0]);
-      if (!role) {
-        message.reply(
-          `there is no role with the id, please give a valid role id`
-        );
-        return;
+      let roleId;
+      const role = message.mentions.roles.first();
+      if (role) {
+        roleId = role.id;
+      } else if (role === undefined) {
+        roleId = args[0];
       }
+      const roleInfo = message.guild.roles.cache.get(roleId);
+      if (!roleInfo) {
+        return message.reply(
+          "There is no role with the id, please give a valid role id"
+        );
+      }
+      const members = roleInfo.members.map((m) => m.user.id);
+      let memsLen = members.length;
 
-      let joinMembers;
+      if (memsLen < 20) {
+        const Data = members.join(">\n<@");
+        const embed = new discord.MessageEmbed()
+          .setAuthor("With Role")
+          .setTitle(`${members.length} users with role ***${roleInfo.name}***`)
+          .setColor(config.embedColor)
+          .setDescription(`<@${Data}>`);
 
-      const members = message.guild.roles.cache
-        .get(roleId)
-        .members.map((m) => m.user.id);
-      console.log(members);
-      const limitedMembers = members.slice(0, 30);
+        const withRoleLogEmbed = new discord.MessageEmbed()
+          .setAuthor(`With Role`)
+          .setColor(config.embedColor)
+          .setDescription(`Message Content: ${message.content}`)
+          .addFields(
+            {
+              name: `Used by:`,
+              value: `<@${message.author.id}>`,
+              inline: true,
+            },
+            {
+              name: `Channel used:`,
+              value: `<#${message.channel.id}>`,
+              inline: true,
+            },
+            {
+              name: "Role ID:",
+              value: roleId,
+            }
+          )
+          .setTimestamp();
+        await logChannel.send(withRoleLogEmbed);
+        return message.channel.send(embed);
+      }
+      const n = 20;
+      const result = new Array(Math.ceil(members.length / n))
+        .fill()
+        //eslint-disable-next-line
+        .map((_) => members.splice(0, n));
+      // console.log(result);
+      let pages = [];
+      let i;
+      for (i = 0; i < result.length; i++) {
+        const embed = new discord.MessageEmbed()
+          .setAuthor("With Role")
+          .setColor(config.embedColor)
+          .setDescription(`<@${result[i].join(">\n<@")}>`);
+        pages.push(embed);
+      }
+      pages.forEach((page) => {
+        page.setTitle(`${memsLen} users with role ***${roleInfo.name}***`);
+      });
+      // console.log(pages);
+      const emojiList = ["◀️", "▶️"];
+      const timeout = 120000;
 
-      joinMembers = limitedMembers.join(">\n<@");
-      const withroleEmbed = new MessageEmbed()
-        .setAuthor(`Withrole`)
-        .setColor(config.embedColor)
-        .setTitle(`${members.length} Members with role '${role.name}' `)
-        .setDescription(`<@${joinMembers}>`)
-        .setFooter(`This Will show top 30 members with the role given`);
-      let outputMessageId;
-
-      const withroleLogEmbed = new MessageEmbed()
-        .setAuthor(`Withrole Log`)
+      const withRoleLogEmbed = new discord.MessageEmbed()
+        .setAuthor(`With Role`)
         .setColor(config.embedColor)
         .setDescription(`Message Content: ${message.content}`)
         .addFields(
@@ -59,23 +104,18 @@ module.exports = {
             inline: true,
           },
           {
-            name: `Channel used:(channel name)`,
+            name: `Channel used:`,
             value: `<#${message.channel.id}>`,
             inline: true,
           },
           {
-            name: `Output:`,
-            value: `Output message Link: [Click Here](https://discordapp.com/channels/${serverId}/${channelId}/${outputMessageId}) `,
-            // inline: true,
+            name: "Role ID:",
+            value: roleId,
           }
         )
         .setTimestamp();
-
-      message.channel.send(withroleEmbed).then((msg) => {
-        // console.log(msg.id);
-        outputMessageId = msg.id;
-      });
-      // .then(logChannel.send(withroleLogEmbed));
+      await logChannel.send(withRoleLogEmbed);
+      await pagenation(message, pages, emojiList, timeout);
     }
   },
 };

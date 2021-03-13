@@ -5,8 +5,8 @@
     "channel": {
       "message_reply": true,
       "diffrent": {
-        "working": true,
-        "channel_ID": "810506075547500594",
+        "working": false,
+        "channel_ID": "levelup_message_channel_id",
         "message_type": "embed"
       }
     }

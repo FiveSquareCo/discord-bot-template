@@ -19,7 +19,7 @@ const messageStatus = {
 let sc;
 module.exports = (client) => {
   if (suggestions.working) {
-    if (suggestions.suggestionsChannelId) {
+    if (suggestions.suggestionsChannelId != "channel_id_here") {
       sc = suggestions.suggestionsChannelId;
       client.on("message", (message) => {
         if (message.author.bot) return;

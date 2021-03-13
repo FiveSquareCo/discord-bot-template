@@ -12,11 +12,11 @@
     "working": true
   },
   "leveling": {
-    "working": false
+    "working": true
   },
   "suggestions": {
     "working": true,
-    "suggestionsChannelId": "795201339788755034"
+    "suggestionsChannelId": "channel_id_here"
   },
   "yt-notifications": {
     "working": true,

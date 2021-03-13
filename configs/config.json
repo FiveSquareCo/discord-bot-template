@@ -1,5 +1,5 @@
 {
-  "name:": "",
+  "name:": "Five Square In.",
   "prefix": "+",
   "owner": {
     "discordId": "",
@@ -23,6 +23,6 @@
   },
   "moderation": {
     "multipleLogs": "coming soon",
-    "modlogsChannelId": "channel_id_here"
+    "modlogsChannelId": "795201366993010698"
   }
 }

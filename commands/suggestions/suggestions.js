@@ -18,7 +18,7 @@ module.exports = {
     message.delete();
     const newStatus = messageStatus[status];
     if (suggestions.working) {
-      if (suggestions.suggestionsChannelId) {
+      if (suggestions.suggestionsChannelId != "channel_id_here") {
         if (!newStatus) {
           message.reply("Wrong Staus, please use 'Accepted' or 'Denied'");
           return;
