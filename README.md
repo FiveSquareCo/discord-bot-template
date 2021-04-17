@@ -85,4 +85,4 @@ If you are interested in Contributing to this project you can do that, but befor
 
 # Help
 
-for any sort of help feel free to contact us on our [Instagram](https://www.instagram.com/fivesquarein/) or else you can even join our [Discord Server](https://discord.gg/jtZCbaAZvV), in our discord server you can talk to our team and clarify your queries
+for any sort of help feel free to contact us on our [Instagram](https://www.instagram.com/fivesquarein/) or else you can even join our [Discord Server](https://discord.gg/R5yfU3Ve7H), in our discord server you can talk to our team and clarify your queries
