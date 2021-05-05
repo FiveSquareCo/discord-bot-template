@@ -39,6 +39,7 @@ client.on("ready", () => {
     showWarns: true, // Show start up warnings
     dbOptions,
   })
+    .setDisplayName(client.user.username)
     .setMongoPath(process.env.MONGO_URI)
     .setDefaultPrefix(config.prefix);
   console.log(`${client.user.username} is ready!`);

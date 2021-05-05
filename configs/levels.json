@@ -1,5 +1,6 @@
 {
   "levelCommandMessage": "card",
+  "xpPerMessage": 13,
   "levelUpnotification": {
     "working": true,
     "channel": {

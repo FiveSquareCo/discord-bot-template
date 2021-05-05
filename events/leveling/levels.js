@@ -4,6 +4,7 @@ const { leveling } = require("./../../configs/features.json");
 const {
   levelRewards,
   levelUpnotification,
+  xpPerMessage,
 } = require("../../configs/levels.json");
 const { MessageEmbed } = require("discord.js");
 const { embedColor } = require("../../configs/config.json");
@@ -12,7 +13,7 @@ module.exports = (client) => {
     if (leveling.working) {
       const { guild, member } = message;
 
-      addXp(guild.id, member.id, 13, message);
+      addXp(guild.id, member.id, xpPerMessage, message);
     }
   });
 };
