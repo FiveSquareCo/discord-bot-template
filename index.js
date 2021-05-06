@@ -9,6 +9,8 @@ const client = new Discord.Client({
 });
 
 client.on("ready", () => {
+  client.prefix = config.prefix;
+  client.embedColor = config.embedColor;
   if (config.botActivity.type === "multiple") {
     const randomStaus = () => {
       let random = config.botActivity.multiple.presence;
