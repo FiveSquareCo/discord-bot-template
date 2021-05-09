@@ -38,12 +38,13 @@ client.on("ready", () => {
     commandsDir: "commands",
     featureDir: "events",
     messagesPath,
-    showWarns: true, // Show start up warnings
+    showWarns: true,
     dbOptions,
   })
     .setDisplayName(client.user.username)
     .setMongoPath(process.env.MONGO_URI)
-    .setDefaultPrefix(config.prefix);
+    .setDefaultPrefix(config.prefix)
+    .setBotOwner(config["owner/dev_DiscordID"]);
   console.log(`${client.user.username} is ready!`);
 });
 

@@ -1,9 +1,11 @@
 {
   "welcome": {
-    "working": "comming soon"
+    "working": true,
+    "logs_channelID": "channel_id_here"
   },
   "leave": {
-    "working": false
+    "working": true,
+    "logs_channelID": "channel_id_here"
   },
   "reactions": {
     "working": "comming soon"
@@ -21,6 +23,6 @@
   "yt-notifications": {
     "working": true,
     "notificationChannelID": "",
-    "channels": {}
+    "channels": []
   }
 }

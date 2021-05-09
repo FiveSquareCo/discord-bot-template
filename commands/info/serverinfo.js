@@ -115,7 +115,7 @@ module.exports = {
           },
           {
             name: `Features`,
-            value: `${features.join(", ")}
+            value: `${features.join(", ") || "None"}
             `,
           }
         );

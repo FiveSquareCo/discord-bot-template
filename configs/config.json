@@ -1,10 +1,7 @@
 {
   "name:": "Five Square In.",
   "prefix": "+",
-  "owner": {
-    "discordId": "",
-    "name": ""
-  },
+  "owner/dev_DiscordID": ["769195469363740682"],
   "embedColor": "#00ffff",
   "botActivity": {
     "type": "multiple",

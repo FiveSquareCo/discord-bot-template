@@ -6,16 +6,25 @@ const { embedColor } = require("../../configs/config.json");
 require("events").EventEmitter.defaultMaxListeners = 15;
 const ignoredUsers = spam.ignoredMemberId;
 const mutedRole = spam.mute_role_name;
+const mutedEmbed = new MessageEmbed()
+  .setDescription("**{user_tag}** Dont Spam")
+  .setColor(embedColor);
+const kickedEmbed = new MessageEmbed()
+  .setDescription("**{user_tag}** Has Been Kicked | Spamming")
+  .setColor(embedColor);
+const bannedEmbed = new MessageEmbed()
+  .setColor(embedColor)
+  .setDescription("**{user_tag}** Has Been Banned | Spamming");
 const antiSpam = new AntiSpam({
   warnThreshold: 4,
   muteThreshold: 7,
   kickThreshold: 10,
   banThreshold: 15,
   maxInterval: 3000,
-  warnMessage: "{@user}, Please stop spamming.",
-  kickMessage: "**{user_tag}** has been kicked for spamming.",
-  muteMessage: "**{user_tag}** has been muted for spamming.",
-  banMessage: "**{user_tag}** has been banned for spamming.",
+  warnMessage: "**{@user}** Dont Spam!",
+  kickMessage: kickedEmbed,
+  muteMessage: mutedEmbed,
+  banMessage: bannedEmbed,
   maxDuplicatesWarning: 7,
   maxDuplicatesKick: 10,
   maxDuplicatesBan: 12,
@@ -25,13 +34,12 @@ const antiSpam = new AntiSpam({
   ignoredUsers: ignoredUsers,
   muteRoleName: mutedRole,
   removeMessages: true,
+  removeBotMessages: true,
+  removeBotMessagesAfter: 3000,
 });
 module.exports = async (client) => {
   client.on("message", (message) => {
-    // if (spam.working) {
-    // console.log("here");
     antiSpam.message(message);
-    // }
   });
   antiSpam.on("warnAdd", (member) => {
     if (automod_logs.working && automod_logs.channel_ID != "channel_id_here") {
@@ -148,9 +156,6 @@ module.exports = async (client) => {
         );
       channel.send(logEmbed);
     }
-    // console.log(
-    //   `${member.user.tag} has been warned in channel <#${member.user.lastMessageChannelID}>`
-    // );
   });
 };
 module.exports.config = {

@@ -18,5 +18,13 @@
   "voice_logs": {
     "working": true,
     "channel_ID": "823590263305666632"
+  },
+  "welcome_logs": {
+    "working": true,
+    "channel_ID": "channel_id_here"
+  },
+  "leave_logs": {
+    "working": true,
+    "channel_ID": "channel_id_here"
   }
 }
