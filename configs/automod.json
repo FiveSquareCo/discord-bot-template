@@ -2,29 +2,34 @@
   "badwords": {
     "working": true,
     "ignoredChannelsId": [],
-    "ignoredMemberId": []
+    "ignoredMemberId": [],
+    "ignoredRoleId": []
   },
   "links": {
     "working": true,
     "ignoredChannelsId": [],
-    "ignoredMemberId": []
+    "ignoredMemberId": [],
+    "ignoredRoleId": []
   },
   "massMention": {
     "working": true,
     "ignoredChannelsId": [],
     "ignoredMemberId": [],
+    "ignoredRoleId": ["851710521555681290"],
     "noOfInvalidMentions": 3
   },
   "spam": {
     "working": true,
     "ignoredMemberId": [],
     "ignoredChannelId": [],
-    "mute_role_name": "Muted"
+    "ignoredRoleId": [],
+    "muteRoleName": "Muted"
   },
   "massEmoji": {
     "working": true,
     "ignoredChannelsId": [],
     "ignoredMemberId": [],
+    "ignoredRoleId": [],
     "noOfInvalidMentions": 5
   }
 }

@@ -2,7 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.3.0] - 2021-05-09 [LATEST]
+## [1.4.0] - 2021-06-08 [LATEST]
+
+### Added
+
+- Ignore Roles in Automod
+- Invite logs part 1
+
+## [1.3.0] - 2021-05-09
 
 ### Added
 

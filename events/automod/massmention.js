@@ -30,7 +30,12 @@ module.exports = (client) => {
       for (m = 0; m < ignoredMembersId.length; m++) {
         if (message.author.id === ignoredMembersId[m]) return;
       }
-      const mention = message.mentions.users;
+      const ignoredRolesId = massMention.ignoredRoleId;
+      let k;
+      for (k = 0; k < ignoredRolesId.length; k++) {
+        if (message.member.roles.cache.has(ignoredRolesId[k])) return;
+      }
+      const mention = message.mentions.users || message.mentions.roles;
 
       // console.log(mention);
 

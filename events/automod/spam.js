@@ -5,7 +5,7 @@ const { MessageEmbed } = require("discord.js");
 const { embedColor } = require("../../configs/config.json");
 require("events").EventEmitter.defaultMaxListeners = 15;
 const ignoredUsers = spam.ignoredMemberId;
-const mutedRole = spam.mute_role_name;
+const mutedRole = spam.muteRoleName;
 const mutedEmbed = new MessageEmbed()
   .setDescription("**{user_tag}** Dont Spam")
   .setColor(embedColor);
@@ -30,6 +30,7 @@ const antiSpam = new AntiSpam({
   maxDuplicatesBan: 12,
   exemptPermissions: [""],
   ignoreBots: true,
+  ignoredRoles: spam.ignoredRoleId,
   verbose: true,
   ignoredUsers: ignoredUsers,
   muteRoleName: mutedRole,

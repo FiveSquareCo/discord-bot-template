@@ -26,17 +26,23 @@ module.exports = async (client) => {
       //checking for working
       if (curse.working) {
         //checking for ignored channels
-        ignoredChannelId = curse.ignoredChannelsId;
+        const ignoredChannelId = curse.ignoredChannelsId;
         let j;
         for (j = 0; j < ignoredChannelId.length; j++) {
           if (message.channel.id === ignoredChannelId[j]) return;
         }
         //checking for ignored members
-        ignoredMembersId = curse.ignoredMemberId;
+        const ignoredMembersId = curse.ignoredMemberId;
         // console.log(ignoredMembersId);
         let m;
         for (m = 0; m < ignoredMembersId.length; m++) {
           if (message.author.id === ignoredMembersId[m]) return;
+        }
+        //checking role
+        const ignoredRolesId = curse.ignoredRoleId;
+        let k;
+        for (k = 0; k < ignoredRolesId.length; k++) {
+          if (message.member.roles.cache.has(ignoredRolesId[k])) return;
         }
         //checking for word
         let i;

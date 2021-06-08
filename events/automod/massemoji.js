@@ -7,6 +7,7 @@ module.exports = (client) => {
   client.on("message", (message) => {
     if (message.author.bot) return;
     if (massEmoji.working) {
+      return;
       let logsChannel;
 
       if (automod_logs.working) {
@@ -30,6 +31,12 @@ module.exports = (client) => {
       let m;
       for (m = 0; m < ignoredMembersId.length; m++) {
         if (message.author.id === ignoredMembersId[m]) return;
+      }
+      const ignoredRolesId = massEmoji.ignoredRoleId;
+      let k;
+      for (k = 0; k < ignoredRolesId.length; k++) {
+        const role = message.guild.roles.cache.get(ignoredRolesId[k]);
+        if (message.member.roles.cache.has(role)) return;
       }
       const MessageContentArray = message.content.split(">");
       let number = 0;
