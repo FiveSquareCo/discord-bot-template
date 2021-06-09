@@ -2,7 +2,7 @@ const warnSchema = require("./../../models/warnSchema");
 const config = require("./../../configs/config.json");
 const { moderation } = require("./../../configs/commands");
 const { MessageEmbed } = require("discord.js");
-const warnId = require("randomstring");
+const { generateRandomString } = require("../../utils/functions");
 module.exports = {
   name: "warn",
   commands: ["warn"],
@@ -41,7 +41,7 @@ module.exports = {
       const reason = args.join(" ");
       // console.log(guildId, userId, reason);
       const warning = {
-        id: warnId.generate(),
+        id: generateRandomString(32),
         givenById: message.author.id,
         givenByName: message.member.user.tag,
         timestamp: new Date().getTime(),

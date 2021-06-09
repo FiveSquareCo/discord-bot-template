@@ -1,23 +1,9 @@
 {
   "name:": "Five Square In.",
   "prefix": "+",
-  "owner/dev_DiscordID": ["769195469363740682"],
+  "owner/dev_DiscordID": ["123456789123456"],
   "embedColor": "#00ffff",
-  "botActivity": {
-    "type": "multiple",
-    "multiple": {
-      "presence": [
-        "Five Square Co.",
-        "Discord Bot Template by Five Square Co."
-      ],
-      "activity": "WATCHING",
-      "time": "5000"
-    },
-    "single": {
-      "presence": "Five Square Co.",
-      "activity": "WATCHING"
-    }
-  },
+  "botActivity": "Check botActivity.js",
   "moderation": {
     "multipleLogs": "coming soon",
     "modlogsChannelId": ""

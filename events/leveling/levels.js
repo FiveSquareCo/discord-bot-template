@@ -59,54 +59,24 @@ const addXp = async (guildId, userId, xpToAdd, message) => {
   let { xp, level } = result;
   const needed = xpToLevel(level);
   const addRoleByLevel = async (level) => {
-    // reward_role_id
-    const rew = levelRewards.rewards;
-    if (rew["level-1"] != "reward_role_id" && level === 1) {
-      const role = message.guild.roles.cache.get(rew["level-1"]);
-      const member = message.guild.members.cache.get(userId);
-      member.roles.add(role);
-    }
-    if (rew["level-5"] != "reward_role_id" && level === 5) {
-      const role = message.guild.roles.cache.get(rew["level-5"]);
-      const member = message.guild.members.cache.get(userId);
-      member.roles.add(role);
-    }
-    if (rew["level-15"] != "reward_role_id" && level === 15) {
-      const role = message.guild.roles.cache.get(rew["level-15"]);
-      const member = message.guild.members.cache.get(userId);
-      member.roles.add(role);
-    }
-    if (rew["level-25"] != "reward_role_id" && level === 25) {
-      const role = message.guild.roles.cache.get(rew["level-25"]);
-      const member = message.guild.members.cache.get(userId);
-      member.roles.add(role);
-    }
-    if (rew["level-35"] != "reward_role_id" && level === 35) {
-      const role = message.guild.roles.cache.get(rew["level-35"]);
-      const member = message.guild.members.cache.get(userId);
-      member.roles.add(role);
-    }
-    if (rew["level-45"] != "reward_role_id" && level === 45) {
-      const role = message.guild.roles.cache.get(rew["level-45"]);
-      const member = message.guild.members.cache.get(userId);
-      member.roles.add(role);
-    }
-    if (rew["level-55"] != "reward_role_id" && level === 55) {
-      const role = message.guild.roles.cache.get(rew["level-55"]);
-      const member = message.guild.members.cache.get(userId);
-      member.roles.add(role);
-    }
-    if (rew["level-70"] != "reward_role_id" && level === 70) {
-      const role = message.guild.roles.cache.get(rew["level-70"]);
-      const member = message.guild.members.cache.get(userId);
-      member.roles.add(role);
+    const rewardsArray = levelRewards.rewards;
+    for (let i = 0; i < rewardsArray.length; i++) {
+      const key = Object.keys(rewardsArray[i])[0];
+      if (key === `${level}`) {
+        const role = message.guild.roles.cache.get(`${rewardsArray[i][key]}`);
+        const member = message.guild.members.cache.get(userId);
+        member.roles.add(role);
+      }
     }
   };
 
   if (xp >= needed) {
     ++level;
     xp -= needed;
-    if (levelRewards.working) {
+    if (
+      levelRewards.working &&
+      levelRewards.rewards[0][1] != "reward_role_id"
+    ) {
       addRoleByLevel(level);
     }
     if (levelUpnotification.working) {

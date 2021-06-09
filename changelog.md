@@ -2,7 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.4.0] - 2021-06-08 [LATEST]
+## [1.5.0] - 2021-06-09 [LATEST]
+
+### Added
+
+- leveldata to logs when a user leaves
+- util that enerate random string
+
+### Updated
+
+- Level roles more modular
+- warning Id's using costom ID Gen (Utils)
+
+### Removed
+
+- 'randomstring' dependency
+
+## [1.4.0] - 2021-06-08
 
 ### Added
 

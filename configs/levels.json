@@ -14,15 +14,6 @@
   },
   "levelRewards": {
     "working": true,
-    "rewards": {
-      "level-1": "reward_role_id",
-      "level-5": "reward_role_id",
-      "level-15": "reward_role_id",
-      "level-25": "reward_role_id",
-      "level-35": "reward_role_id",
-      "level-45": "reward_role_id",
-      "level-55": "reward_role_id",
-      "level-70": "reward_role_id"
-    }
+    "rewards": [{ "1": "reward_role_id" }]
   }
 }
